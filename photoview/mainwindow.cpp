@@ -36,4 +36,11 @@ void MainWindow::displayLatestFileInPath(QString path)
         qDebug() << "Will display" << QString("%1/%2").arg(path).arg(files.first());
         ui->lblDisplay->setPixmap(QPixmap(QString("%1/%2").arg(path).arg(files.first())));
     }
+
+    if(files.size() > 3)
+    {
+        ui->lblLast1->setPixmap(QPixmap(QString("%1/%2").arg(path).arg(files[1])));
+        ui->lblLast2->setPixmap(QPixmap(QString("%1/%2").arg(path).arg(files[2])));
+        ui->lblLast3->setPixmap(QPixmap(QString("%1/%2").arg(path).arg(files[3])));
+    }
 }
