@@ -29,7 +29,7 @@ void MainWindow::directoryChanged(QString path)
 void MainWindow::displayLatestFileInPath(QString path)
 {
     QDir d(path);
-    QStringList files = d.entryList(QStringList("*.jpg"), QDir::Files, QDir::Time | QDir::Reversed);
+    QStringList files = d.entryList(QStringList("*.jpg"), QDir::Files, QDir::Time);
 
     if(files.size())
     {
