@@ -34,6 +34,8 @@ void MainWindow::displayLatestFileInPath(QString path)
     if(files.size())
     {
         qDebug() << "Will display" << QString("%1/%2").arg(path).arg(files.first());
-        ui->lblDisplay->setPixmap(QPixmap(QString("%1/%2").arg(path).arg(files.first())));
+
+	ui->lblDisplay->setScaledContents(true);
+        ui->lblDisplay->setPixmap(QPixmap(QString("%1/%2").arg(path).arg(files.first())).scaled(this->frameSize(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     }
 }

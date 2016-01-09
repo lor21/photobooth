@@ -12,10 +12,15 @@ def capture( ):
 		time.sleep(1)
 		call(["touch", "./1.jpg"])
 		time.sleep(1)
+		call(["touch", "./Smile.jpg"])
+
 		filename = time.strftime("%y%m%d%H%M%S") + ".jpg"
 		call(["gphoto2","--set-config", "/main/settings/capturetarget=1","--keep","--capture-image-and-download","--filename",filename])
+		time.sleep(1)
+		call(["touch", "./" + filename])
+		time.sleep(3)
 	
-	time.sleep(1);	
+	time.sleep(5)
 	call(["touch", "./startup.jpg"])
 
 	print "end cap"
